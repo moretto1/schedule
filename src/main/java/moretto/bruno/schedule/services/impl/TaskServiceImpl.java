@@ -1,5 +1,6 @@
 package moretto.bruno.schedule.services.impl;
 
+import moretto.bruno.schedule.domain.bo.TaskBo;
 import moretto.bruno.schedule.domain.dtos.TaskDto;
 import moretto.bruno.schedule.domain.entities.Task;
 import moretto.bruno.schedule.domain.mappers.Mapper;
@@ -15,11 +16,15 @@ public class TaskServiceImpl implements TaskService {
     private TaskRepository taskRepository;
 
     @Autowired
+    private TaskBo taskBo;
+
+    @Autowired
     private Mapper<TaskDto, Task> mapper;
 
     @Override
     public void create(TaskDto taskDto) {
         Task task = mapper.mapToEntity(taskDto, Task.class);
+        taskBo.setCommonsData(task);
         taskRepository.save(task);
     }
 
