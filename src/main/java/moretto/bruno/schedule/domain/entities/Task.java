@@ -24,13 +24,13 @@ public class Task {
     @Column(name = "DETAILS")
     private String details;
 
-    @Column(name = "TASK_PAGE_ID")
+    @Column(name = "TASK_PAGE_ID", updatable = false)
     private Long taskPageId;
 
     @Column(name = "PRIORITY")
     private String priority;
 
-    @Column(name = "CREATION_DATE")
+    @Column(name = "CREATION_DATE", updatable = false)
     private LocalDateTime creationDate;
 
     @Column(name = "END_DATE")

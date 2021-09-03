@@ -206,3 +206,6 @@ Caused by: java.lang.IllegalStateException: The file is locked: nio:D:/Projetos/
 	at org.h2.mvstore.FileStore.open(FileStore.java:172)
 	at org.h2.mvstore.MVStore.<init>(MVStore.java:381)
 	... 35 more
+2021-09-02 22:40:05 jdbc[13]: exception
+org.h2.jdbc.JdbcSQLSyntaxErrorException: Syntax error in SQL statement "SELECTASK[*]"; expected "SET, SAVEPOINT, SCRIPT, SHUTDOWN, SHOW"; SQL statement:
+SELECTASK [42001-200]

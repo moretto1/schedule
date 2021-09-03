@@ -20,4 +20,9 @@ public class TaskControllerImpl implements TaskController {
         return ResponseEntity.status(HttpStatus.CREATED).build();
     }
 
+    @Override
+    public ResponseEntity<?> updateTask(TaskDto taskDto) {
+        return ResponseEntity.ok(taskService.update(taskDto));
+    }
+
 }

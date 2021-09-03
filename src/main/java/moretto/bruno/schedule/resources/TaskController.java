@@ -8,6 +8,7 @@ import moretto.bruno.schedule.domain.dtos.TaskDto;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
@@ -27,5 +28,16 @@ public interface TaskController {
     })
     @PostMapping
     ResponseEntity<?> createTask(@RequestBody @Valid TaskDto taskDto);
+
+    @ApiOperation(
+            value = "Create a new task",
+            consumes = MediaType.APPLICATION_JSON_VALUE
+    )
+    @ApiResponses(value = {
+            @ApiResponse(code = 201, message = "Created"),
+            @ApiResponse(code = 400, message = "Bad request")
+    })
+    @PutMapping
+    ResponseEntity<?> updateTask(@RequestBody @Valid TaskDto taskDto);
 
 }

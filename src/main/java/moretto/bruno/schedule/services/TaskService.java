@@ -10,4 +10,6 @@ public interface TaskService {
 
     void create(TaskDto taskDto);
 
+    TaskDto update(TaskDto taskDto);
+
 }

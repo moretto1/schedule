@@ -38,6 +38,13 @@ public class TaskServiceImpl implements TaskService {
         taskRepository.save(task);
     }
 
+    @Override
+    public TaskDto update(TaskDto taskDto) {
+        Task task = mapper.mapToEntity(taskDto, Task.class);
+        task = taskRepository.save(task);
+        return mapper.mapToDto(task, TaskDto.class);
+    }
+
     private boolean checkIfExistsTaskPage(Long taskPageId) {
         var taskPage = taskPageService.findById(taskPageId);
         return Objects.nonNull(taskPage);

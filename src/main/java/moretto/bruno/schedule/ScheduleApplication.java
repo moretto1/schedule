@@ -14,9 +14,4 @@ public class ScheduleApplication {
 		SpringApplication.run(ScheduleApplication.class, args);
 	}
 
-	@Bean
-	public ModelMapper modelMapper() {
-		return new ModelMapper();
-	}
-
 }
