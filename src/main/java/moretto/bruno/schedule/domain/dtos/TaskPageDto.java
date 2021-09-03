@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import moretto.bruno.schedule.domain.entities.Task;
 
+import javax.validation.constraints.NotBlank;
 import java.util.List;
 
 @Data
@@ -15,6 +16,7 @@ public class TaskPageDto {
 
     private Long id;
 
+    @NotBlank(message = "name is required")
     private String name;
 
     private List<Task> tasks;

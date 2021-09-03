@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
+import javax.validation.Valid;
+
 @Api(value = "Resources related to tasks", tags = "Task Controller")
 @RequestMapping(path = "/tasks")
 public interface TaskController {
@@ -24,6 +26,6 @@ public interface TaskController {
             @ApiResponse(code = 400, message = "Bad request")
     })
     @PostMapping
-    ResponseEntity<?> createTask(@RequestBody TaskDto taskDto);
+    ResponseEntity<?> createTask(@RequestBody @Valid TaskDto taskDto);
 
 }

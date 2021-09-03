@@ -9,6 +9,8 @@ import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import javax.validation.Valid;
+
 @Api(value = "Resources related to task pages", tags = "Task Pages Controller")
 @RequestMapping(path = "/task-pages")
 public interface TaskPageController {
@@ -22,7 +24,7 @@ public interface TaskPageController {
             @ApiResponse(code = 400, message = "Bad request")
     })
     @PostMapping
-    ResponseEntity<?> createTaskPage(@RequestBody TaskPageDto taskPageDto);
+    ResponseEntity<?> createTaskPage(@RequestBody @Valid TaskPageDto taskPageDto);
 
     @ApiOperation(
             value = "Find a task page by id",
